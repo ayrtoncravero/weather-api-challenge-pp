@@ -4,9 +4,16 @@
   "description": "API que provee datos del clima de ciudades, para completar el challenge backend pp",
   "main": "index.js",
   "scripts": {
+    "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Ayrton Cravero",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "express": "4.19.2"
+  }
 }
