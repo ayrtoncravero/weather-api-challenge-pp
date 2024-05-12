@@ -7,9 +7,9 @@ async function main(): Promise<void> {
   try {
     app.listen(PORT);
     console.log(`⚡️ Server running on port: ${PORT}`);
-  } catch(error: any) {
+  } catch(error) {
     console.log('error: ', error);
-  };
-};
+  }
+}
 
 main();
