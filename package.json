@@ -1,0 +1,12 @@
+{
+  "name": "weather-api-challenge-pp",
+  "version": "1.0.0",
+  "description": "API que provee datos del clima de ciudades, para completar el challenge backend pp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ayrton Cravero",
+  "license": "ISC"
+}
