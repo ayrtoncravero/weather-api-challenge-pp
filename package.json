@@ -6,19 +6,33 @@
   "scripts": {
     "start": "node dist/index.js",
     "tsc": "tsc",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .js --fix",
+    "prepare": "husky",
+    "pre-commit": "npm run lint",
+    "depcheck": "depcheck",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Ayrton Cravero",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "20.12.11",
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@typescript-eslint/eslint-plugin": "7.8.0",
+    "@typescript-eslint/parser": "7.8.0",
+    "depcheck": "1.4.7",
+    "eslint": "8.57.0",
+    "husky": "^9.0.11",
     "typescript": "5.4.5"
   },
   "dependencies": {
-    "body-parser": "1.20.2",
+    "body-parser": "^1.20.2",
     "dotenv": "16.4.5",
     "express": "4.19.2",
+    "helmet": "7.1.0",
+    "morgan": "1.10.0",
     "reflect-metadata": "0.2.2"
   }
 }
