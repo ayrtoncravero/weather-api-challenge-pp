@@ -14,6 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/api/v1', weather);
+app.use('/v1', weather);
 
 export default app;
