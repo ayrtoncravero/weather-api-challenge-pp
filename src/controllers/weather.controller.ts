@@ -2,7 +2,6 @@ import {
     Request,
     Response,
 } from 'express';
-import axios, { AxiosResponse } from 'axios';
 import {
     formaterWeaterObjetWithParameters,
     formaterCityObjetWithParameters,
@@ -20,15 +19,14 @@ const apiKey: string | undefined = process.env.API_KEY;
 export const location = async (_req: Request, res: Response) => {
     try {
         const url: string = `${process.env.URL_BASE_IP_API}/json`;
-
-        const { data }: AxiosResponse<any> = await axios.get(url);
+        const response = await getIpApiCurrentDefault(url);
 
         const cityData: object = {
-            city: data.city,
-            country: data.countryCode,
+            city: response.city,
+            country: response.countryCode,
             coord: {
-                lat: data.lat,
-                lon: data.lon,
+                lat: response.lat,
+                lon: response.lon,
             },
         };
 
@@ -56,36 +54,43 @@ export const currentCity = async (req: Request, res: Response) => {
     }
 
     if(!city) {
-        const urlIpApi: string =`${process.env.URL_BASE_IP_API}/json`;
-        const responseGetIpApiCurrentDefault = await getIpApiCurrentDefault(urlIpApi);
+        try {
+            const urlIpApi: string =`${process.env.URL_BASE_IP_API}/json`;
+            const responseGetIpApiCurrentDefault = await getIpApiCurrentDefault(urlIpApi);
 
-        const city: string = responseGetIpApiCurrentDefault.city;
-        const countryCode: string = responseGetIpApiCurrentDefault.countryCode;
-        const timezone: string = responseGetIpApiCurrentDefault.timezone;
+            const city: string = responseGetIpApiCurrentDefault.city;
+            const countryCode: string = responseGetIpApiCurrentDefault.countryCode;
+            const timezone: string = responseGetIpApiCurrentDefault.timezone;
 
-        const weatherPath: string = 'weather';
-        const responseGetWeatherData: object = await getWeatherData(
-            baseUrlOpenWeatherApi,
-            weatherPath,
-            city,
-            countryCode,
-            apiKey,
-            unit,
-            lang,
-        );
+            const weatherPath: string = 'weather';
+            const responseGetWeatherData: object = await getWeatherData(
+                baseUrlOpenWeatherApi,
+                weatherPath,
+                city,
+                countryCode,
+                apiKey,
+                unit,
+                lang,
+            );
 
-        const currentWeather: any = formaterWeaterObjetWithParameters(
-            responseGetWeatherData,
-            timezone,
-            temperatureSymbol,
-        );
+            const currentWeather: any = formaterWeaterObjetWithParameters(
+                responseGetWeatherData,
+                timezone,
+                temperatureSymbol,
+            );
 
-       const cityData: object = formaterCityObjetWithParameters(responseGetWeatherData); 
+            const cityData: object = formaterCityObjetWithParameters(responseGetWeatherData); 
 
-        return res.status(200).json({
-            cityData,
-            currentWeather,
-        });
+            return res.status(200).json({
+                cityData,
+                currentWeather,
+            });
+        } catch(error: any) {
+            console.log('error: ', error.message);
+            return res.status(500).json({
+                message: 'something goes wrong',
+            });
+        }
     }
 
     try {
