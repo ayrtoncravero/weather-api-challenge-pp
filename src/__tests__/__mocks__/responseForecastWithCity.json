@@ -1,0 +1,652 @@
+{
+    "cityData": {
+        "city": "San Francisco",
+        "country": "AR",
+        "coord": {
+            "lat": -31.428,
+            "lon": -62.0827
+        }
+    },
+    "currentWeatherForecast": [
+        {
+            "description": "muy nuboso",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 12.84
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 60
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 5.47
+            }
+        },
+        {
+            "description": "muy nuboso",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 14.41
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 52
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 5.46
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 11.81
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 61
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.51
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 7.84
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 76
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.35
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 6.12
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 83
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.86
+            }
+        },
+        {
+            "description": "nubes dispersas",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 5.78
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 85
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.83
+            }
+        },
+        {
+            "description": "muy nuboso",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 5.16
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 91
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.91
+            }
+        },
+        {
+            "description": "muy nuboso",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 7.01
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 83
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.32
+            }
+        },
+        {
+            "description": "algo de nubes",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 13.24
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 54
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.84
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 15.04
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 46
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.78
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 11.46
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 60
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.64
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 8.09
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 70
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.71
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 6.89
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 74
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.05
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 5.93
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 78
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 1.77
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 5.36
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 82
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 1.52
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 7.48
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 76
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 1.76
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 14.09
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 54
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.79
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 16.26
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 48
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.83
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 12.32
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 65
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.25
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 8.6
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 78
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.59
+            }
+        },
+        {
+            "description": "nubes dispersas",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 7.31
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 86
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.68
+            }
+        },
+        {
+            "description": "algo de nubes",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 6.16
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 92
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.63
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 5.45
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 94
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.79
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 7.39
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 84
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 4.94
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 14.66
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 54
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 7.1
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 16.81
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 46
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 7.59
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 13.78
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 59
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 5.38
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 9.27
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 79
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.99
+            }
+        },
+        {
+            "description": "muy nuboso",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 8.86
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 81
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.76
+            }
+        },
+        {
+            "description": "nubes dispersas",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 8.01
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 88
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.19
+            }
+        },
+        {
+            "description": "nubes dispersas",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 7.52
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 91
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.12
+            }
+        },
+        {
+            "description": "nubes dispersas",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 9.51
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 82
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 1.53
+            }
+        },
+        {
+            "description": "muy nuboso",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 15.97
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 59
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 1.73
+            }
+        },
+        {
+            "description": "nubes dispersas",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 18.59
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 52
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.85
+            }
+        },
+        {
+            "description": "cielo claro",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 14.68
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 69
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.22
+            }
+        },
+        {
+            "description": "muy nuboso",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 11.38
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 85
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.2
+            }
+        },
+        {
+            "description": "nubes",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 10.45
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 87
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 2.78
+            }
+        },
+        {
+            "description": "nubes",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 10.16
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 86
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.37
+            }
+        },
+        {
+            "description": "nubes",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 10.08
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 85
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.65
+            }
+        },
+        {
+            "description": "nubes",
+            "timezone": "-03:00",
+            "temperature": {
+                "unit": "°C",
+                "value": 9.99
+            },
+            "humidity": {
+                "unit": "%",
+                "value": 85
+            },
+            "windSpeed": {
+                "unit": "M/S",
+                "value": 3.14
+            }
+        }
+    ]
+}
