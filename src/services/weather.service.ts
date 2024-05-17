@@ -44,7 +44,33 @@ export const formaterWeaterObjetWithParameters = (
     weatherData: any,
     timezone: string,
     temperatureSymbol: string | undefined,
-): object => {
+): any => {
+    if(weatherData.list) {
+        const weatherArray: Array<object> = [];
+        weatherData.list.forEach((element: any) => {
+            weatherArray.push(
+                {
+                    description:element.list?.[0]?.weather?.[0]?.description ||element.weather?.[0]?.description || 'No description available',
+                    timezone,
+                    temperature: {
+                        unit: temperatureSymbol || 'No temperature unit available',
+                        value:element.list?.[0]?.main?.temp ||element.main?.temp || 0 || 'No temperature value available',
+                    },
+                    humidity: {
+                        unit: '%',
+                        value:element.list?.[0]?.main?.humidity ||element.main?.humidity || 0 || 'No humidity value available',
+                    },
+                    windSpeed: {
+                        unit: 'M/S',
+                        value:element.list?.[0]?.wind?.speed ||element.wind?.speed || 0 ,
+                    },
+                },
+            );
+        });
+
+        return weatherArray;
+    }
+
     return {
         description: weatherData.list?.[0]?.weather?.[0]?.description || weatherData.weather?.[0]?.description || 'No description available',
         timezone,
