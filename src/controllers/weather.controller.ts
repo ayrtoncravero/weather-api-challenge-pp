@@ -74,7 +74,7 @@ export const currentCity = async (req: Request, res: Response) => {
             lang,
         );
 
-        const currentWeather: object = formaterWeaterObjetWithParameters(
+        const currentWeather: any = formaterWeaterObjetWithParameters(
             responseGetWeatherData,
             timezone,
             temperatureSymbol,
@@ -108,7 +108,7 @@ export const currentCity = async (req: Request, res: Response) => {
             lang,
         );
 
-        const currentWeatherForecast: object = formaterWeaterObjetWithParameters(
+        const currentWeatherForecast: any = formaterWeaterObjetWithParameters(
             responseGetWeatherData,
             timezone,
             temperatureSymbol,
@@ -205,7 +205,7 @@ export const forecastCity = async (req: Request, res: Response) => {
             timezone = formattedTimezoneHelper(responseGetWeatherData.city.timezone);
         }
 
-        const currentWeatherForecast: object = formaterWeaterObjetWithParameters(
+        const currentWeatherForecast: any = formaterWeaterObjetWithParameters(
             responseGetWeatherData,
             timezone,
             temperatureSymbol,
