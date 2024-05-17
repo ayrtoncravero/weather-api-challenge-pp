@@ -1,0 +1,26 @@
+{
+    "cityData": {
+        "city": "San Francisco",
+        "country": "AR",
+        "coord": {
+            "lat": -31.428,
+            "lon": -62.0827
+        }
+    },
+    "currentWeatherForecast": {
+        "description": "nubes",
+        "timezone": "America/Argentina/Cordoba",
+        "temperature": {
+            "unit": "°C",
+            "value": 7.12
+        },
+        "humidity": {
+            "unit": "%",
+            "value": 68
+        },
+        "windSpeed": {
+            "unit": "M/S",
+            "value": 2.65
+        }
+    }
+}
