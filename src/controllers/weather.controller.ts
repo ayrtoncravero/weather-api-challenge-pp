@@ -14,12 +14,19 @@ import {
 import { isValidCountryCode } from '../helpers/isValidCountryCode.hekper';
 import { formattedTimezoneHelper } from '../helpers/formattedTimezone.helper';
 import { isValidLanguage } from '../helpers/isValidLanguage.helper';
+import { connect } from '../config/redis.config';
 const apiKey: string | undefined = process.env.API_KEY;
 
 export const location = async (_req: Request, res: Response) => {
+    const redis = await connect();
+
     try {
         const url: string = `${process.env.URL_BASE_IP_API}/json`;
         const response = await getIpApiCurrentDefault(url);
+
+        await redis.set('location', JSON.stringify(response));
+
+        console.log(await redis.get('location'));
 
         const cityData: object = {
             city: response.city,
