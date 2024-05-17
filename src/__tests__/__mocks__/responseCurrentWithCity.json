@@ -7,20 +7,20 @@
             "lon": -62.0827
         }
     },
-    "currentWeatherForecast": {
+    "currentWeather": {
         "description": "nubes",
         "timezone": "America/Argentina/Cordoba",
         "temperature": {
             "unit": "°C",
-            "value": 7.12
+            "value": 12.68
         },
         "humidity": {
             "unit": "%",
-            "value": 68
+            "value": 62
         },
         "windSpeed": {
             "unit": "M/S",
-            "value": 2.65
+            "value": 5.45
         }
     }
 }

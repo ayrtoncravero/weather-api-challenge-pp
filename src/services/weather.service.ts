@@ -92,10 +92,10 @@ export const formaterWeaterObjetWithParameters = (
 export const formaterCityObjetWithParameters = (responseGetWeatherData: any): object => {
     return {
         city: responseGetWeatherData?.name || 'No city available',
-        country: responseGetWeatherData?.country || responseGetWeatherData.sys.country || 'No coutry available',
+        country: responseGetWeatherData?.country || responseGetWeatherData?.sys?.country || 'No coutry available',
         coord: {
-            lat: responseGetWeatherData?.coord.lat || 'No lat available',
-            lon: responseGetWeatherData?.coord.lon || 'No lon available',
+            lat: responseGetWeatherData?.coord?.lat || 'No lat available',
+            lon: responseGetWeatherData?.coord?.lon || 'No lon available',
         },
     };
 };

@@ -12,7 +12,7 @@ import {
     getWeatherForecast5Days,
     getForecastWeatherData,
 } from '../services/weather.service';
-import { isValidCountryCode } from '../helpers/isValidCountryCode.hekper';
+import { isValidCountryCode } from '../helpers/isValidCountryCode.helper';
 import { formattedTimezoneHelper } from '../helpers/formattedTimezone.helper';
 import { isValidLanguage } from '../helpers/isValidLanguage.helper';
 const apiKey: string | undefined = process.env.API_KEY;

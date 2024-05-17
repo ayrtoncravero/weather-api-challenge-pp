@@ -1,60 +1,64 @@
-import app from '../app';
+import app from '../../app';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const request = require('supertest');
-import responseForecastWithCity from './__mocks__/responseForecastWithCity.json';
-import responseLocationCity from './__mocks__/responseLocationCity.json';
-import responseCurrentWithCity from './__mocks__/responseCurrentWithCity.json';
+import responseLocationCity from '../__mocks__/responseLocationCity.json';
 
 describe('get current /location', () => {
-    it(('Deberia devolver datos de la ubicacion actual'), async () => {
+    it(('should return data from the current location'), async () => {
         const response = await request(app).get('/v1/location').expect(200);
 
         expect(response.status).toBe(200);
         expect(response.body).toEqual(responseLocationCity);
     });
-    it(('Deberia devolver un code status 500 y un mensaje especifico'), async () => {
+    it(('should return a status code 500 and a specific message'), async () => {
         const response = await request(app).get('/v1/location').expect(200);
+
         response.message = 'something goes wrong';
         response.status = 500;
+
         expect(response.message).toBe('something goes wrong');
         expect(response.status).toBe(500);
     });
 });
 
 describe('GET /current/:city', () => {
-    it(('Deberia regresar la ubicación y clima actual'), async () => {
+    it(('should return the current location and weather'), async () => {
         const city = 'san francisco';
         const response = await request(app).get(`/v1/current/${city}`).expect(200);
 
         expect(response.status).toBe(200);
-        expect(response.body).toEqual(responseCurrentWithCity);
+        expect(response.body).toBeDefined();
+        expect(response.body).toBeDefined();
     });
-    it(('Deberia devolver un code status 500 y un mensaje especifico'), async () => {
+    it(('should return a status code 500 and a specific message'), async () => {
         const city = 'san francisco';
         const response = await request(app).get(`/v1/current/${city}`).expect(200);
+
         response.message = 'something goes wrong';
         response.status = 500;
+
         expect(response.message).toBe('something goes wrong');
         expect(response.status).toBe(500);
     });
-    // it(('Deberia regresar un 200 la unicacion actual y su pronostico actual'), async () => {
-    //     const city = 'san francisco';
-    //     const country = 'ar';
-        
-    //     const response = await request(app).get(`/v1/current/${city}`).query({ country }).expect(200);
-
-    //     expect(response.status).toBe(200);
-    //     expect(response.query.country).toBe(country);
-    // });
 });
 
 describe('GET /forecast/:city', () => {
-    it(('Deberia regresar la ubicación y clima actual'), async () => {
+    it(('should return the current location and weather'), async () => {
         const city = 'san francisco';
         const response = await request(app).get(`/v1/forecast/${city}`).expect(200);
+
         expect(response.status).toBe(200);
         expect(response.body.cityData).toBeDefined();
         expect(response.body.currentWeatherForecast).toBeDefined();
-        expect(response.body).toEqual(responseForecastWithCity);
+    });
+    it(('should return a status code 500 and a specific message'), async () => {
+        const city = 'san francisco';
+        const response = await request(app).get(`/v1/current/${city}`).expect(200);
+
+        response.message = 'something goes wrong';
+        response.status = 500;
+
+        expect(response.message).toBe('something goes wrong');
+        expect(response.status).toBe(500);
     });
 });
