@@ -10,13 +10,20 @@ export const getTemperatureSymbol = (unit: string | undefined): string | undefin
             return TEMPERATURE_SYMBOL.FAHRENHEIT;
         case TEMPERATURE_UNITS.CELSIUS:
             return TEMPERATURE_SYMBOL.CELSIUS;
+        default:
+            return TEMPERATURE_SYMBOL.CELSIUS;
     }
 };
 
 export const getIpApiCurrentDefault = async (url: string): Promise<any> => {
-    const { data }: AxiosResponse<any> = await axios.get(url);
+    try {
+        const { data }: AxiosResponse<any> = await axios.get(url);
 
-    return data;
+        return data;
+    } catch(error: any) {
+        console.log('error: ', error.message);
+        throw error;
+    }
 };
 
 export const getWeatherData = async (
@@ -28,16 +35,21 @@ export const getWeatherData = async (
     unit: string | undefined,
     lang: string,
 ): Promise<any> => {
-    const urlWeather = new URL(`${baseUrlOpenWeatherApi}/${weatherPath}`);
+    try {
+        const urlWeather = new URL(`${baseUrlOpenWeatherApi}/${weatherPath}`);
 
-    urlWeather.searchParams.set('q', `${city},${countryCode}`);
-    urlWeather.searchParams.set('appid', `${apiKey}`);
-    urlWeather.searchParams.set('units', `${unit}`);
-    urlWeather.searchParams.set('lang', `${lang}`);
+        urlWeather.searchParams.set('q', `${city},${countryCode}`);
+        urlWeather.searchParams.set('appid', `${apiKey}`);
+        urlWeather.searchParams.set('units', `${unit}`);
+        urlWeather.searchParams.set('lang', `${lang}`);
 
-    const response: AxiosResponse<any> = await axios.get(urlWeather.toString());
+        const response: AxiosResponse<any> = await axios.get(urlWeather.toString());
 
-    return response.data;
+        return response.data;
+    } catch(error: any) {
+        console.log('error: ', error.message);
+        throw error;
+    }
 };
 
 export const formaterWeaterObjetWithParameters = (
@@ -45,59 +57,69 @@ export const formaterWeaterObjetWithParameters = (
     timezone: string,
     temperatureSymbol: string | undefined,
 ): any => {
-    if(weatherData.list) {
-        const weatherArray: Array<object> = [];
-        weatherData.list.forEach((element: any) => {
-            weatherArray.push(
-                {
-                    description:element.list?.[0]?.weather?.[0]?.description ||element.weather?.[0]?.description || 'No description available',
-                    timezone,
-                    temperature: {
-                        unit: temperatureSymbol || 'No temperature unit available',
-                        value:element.list?.[0]?.main?.temp ||element.main?.temp || 0 || 'No temperature value available',
+    try {
+        if(weatherData.list) {
+            const weatherArray: Array<object> = [];
+            weatherData.list.forEach((element: any) => {
+                weatherArray.push(
+                    {
+                        description:element.list?.[0]?.weather?.[0]?.description ||element.weather?.[0]?.description || 'No description available',
+                        timezone,
+                        temperature: {
+                            unit: temperatureSymbol || 'No temperature unit available',
+                            value:element.list?.[0]?.main?.temp ||element.main?.temp || 0 || 'No temperature value available',
+                        },
+                        humidity: {
+                            unit: '%',
+                            value:element.list?.[0]?.main?.humidity ||element.main?.humidity || 0 || 'No humidity value available',
+                        },
+                        windSpeed: {
+                            unit: 'M/S',
+                            value:element.list?.[0]?.wind?.speed ||element.wind?.speed || 0 ,
+                        },
                     },
-                    humidity: {
-                        unit: '%',
-                        value:element.list?.[0]?.main?.humidity ||element.main?.humidity || 0 || 'No humidity value available',
-                    },
-                    windSpeed: {
-                        unit: 'M/S',
-                        value:element.list?.[0]?.wind?.speed ||element.wind?.speed || 0 ,
-                    },
-                },
-            );
-        });
-
-        return weatherArray;
+                );
+            });
+    
+            return weatherArray;
+        }
+    
+        return {
+            description: weatherData.list?.[0]?.weather?.[0]?.description || weatherData.weather?.[0]?.description || 'No description available',
+            timezone,
+            temperature: {
+                unit: temperatureSymbol || 'No temperature unit available',
+                value: weatherData.list?.[0]?.main?.temp || weatherData.main?.temp || 0 || 'No temperature value available',
+            },
+            humidity: {
+                unit: '%',
+                value: weatherData.list?.[0]?.main?.humidity || weatherData.main?.humidity || 0 || 'No humidity value available',
+            },
+            windSpeed: {
+                unit: 'M/S',
+                value: weatherData.list?.[0]?.wind?.speed || weatherData.wind?.speed || 0 ,
+            },
+        };
+    } catch(error: any) {
+        console.log('error: ', error.message);
+        throw error;
     }
-
-    return {
-        description: weatherData.list?.[0]?.weather?.[0]?.description || weatherData.weather?.[0]?.description || 'No description available',
-        timezone,
-        temperature: {
-            unit: temperatureSymbol || 'No temperature unit available',
-            value: weatherData.list?.[0]?.main?.temp || weatherData.main?.temp || 0 || 'No temperature value available',
-        },
-        humidity: {
-            unit: '%',
-            value: weatherData.list?.[0]?.main?.humidity || weatherData.main?.humidity || 0 || 'No humidity value available',
-        },
-        windSpeed: {
-            unit: 'M/S',
-            value: weatherData.list?.[0]?.wind?.speed || weatherData.wind?.speed || 0 ,
-        },
-    };
 };
 
 export const formaterCityObjetWithParameters = (responseGetWeatherData: any): object => {
-    return {
-        city: responseGetWeatherData?.name || 'No city available',
-        country: responseGetWeatherData?.country || responseGetWeatherData.sys.country || 'No coutry available',
-        coord: {
-            lat: responseGetWeatherData?.coord.lat || 'No lat available',
-            lon: responseGetWeatherData?.coord.lon || 'No lon available',
-        },
-    };
+    try {
+        return {
+            city: responseGetWeatherData?.name || 'No city available',
+            country: responseGetWeatherData?.country || responseGetWeatherData.sys.country || 'No coutry available',
+            coord: {
+                lat: responseGetWeatherData?.coord.lat || 'No lat available',
+                lon: responseGetWeatherData?.coord.lon || 'No lon available',
+            },
+        };
+    } catch(error: any) {
+        console.log('error: ', error.message);
+        throw error;
+    }
 };
 
 export const getForecastWeatherData = async (
@@ -109,45 +131,55 @@ export const getForecastWeatherData = async (
     unit: string | undefined,
     country: string | undefined,
 ) => {
-    const urlForecastWeather = new URL(`${baseUrlOpenWeatherApi}/${forecastWeatherPath}`);
+    try {
+        const urlForecastWeather = new URL(`${baseUrlOpenWeatherApi}/${forecastWeatherPath}`);
 
-    urlForecastWeather.searchParams.set('q', `${city},${country}`);
-    urlForecastWeather.searchParams.set('appid', `${apiKey}`);
-    urlForecastWeather.searchParams.set('units', `${unit}`);
-    urlForecastWeather.searchParams.set('lang', `${lang}`);
+        urlForecastWeather.searchParams.set('q', `${city},${country}`);
+        urlForecastWeather.searchParams.set('appid', `${apiKey}`);
+        urlForecastWeather.searchParams.set('units', `${unit}`);
+        urlForecastWeather.searchParams.set('lang', `${lang}`);
 
-    const { data }: AxiosResponse<any> = await axios.get(urlForecastWeather.toString());
+        const { data }: AxiosResponse<any> = await axios.get(urlForecastWeather.toString());
 
-    return data;
+        return data;
+    } catch(error: any) {
+        console.log('error: ', error.message);
+        throw error;
+    }
 };
 
 export const getWeatherForecast5Days = (forestWeatherData: any, temperatureSymbol: string | undefined): any => {
     const weatherForecast5Days: Array<object> = [];
 
-    forestWeatherData.list.forEach((element: any) => {
-        const dateTime = element.dt_txt;
-        const temperature =  {
-            unit: temperatureSymbol,
-            value: element.main.temp,
-        };
-        const humidity = {
-            unit: '%',
-            value: element.main.humidity,
-        };
-        const weatherDescription = element.weather[0].description;
-        const windSpeed = {
-            unit: 'M/S',
-            value: element.wind.speed,
-        };
-
-        weatherForecast5Days.push({
-            dateTime,
-            temperature,
-            humidity,
-            weatherDescription,
-            windSpeed,
+    try {
+        forestWeatherData.list.forEach((element: any) => {
+            const dateTime = element.dt_txt;
+            const temperature =  {
+                unit: temperatureSymbol,
+                value: element.main.temp,
+            };
+            const humidity = {
+                unit: '%',
+                value: element.main.humidity,
+            };
+            const weatherDescription = element.weather[0].description;
+            const windSpeed = {
+                unit: 'M/S',
+                value: element.wind.speed,
+            };
+    
+            weatherForecast5Days.push({
+                dateTime,
+                temperature,
+                humidity,
+                weatherDescription,
+                windSpeed,
+            });
         });
-    });
-
-    return weatherForecast5Days;
+    
+        return weatherForecast5Days;
+    } catch(error: any) {
+        console.log('error: ', error.message);
+        throw error;
+    }
 };
