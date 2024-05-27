@@ -11,7 +11,7 @@ import {
     getWeatherForecast5Days,
     getForecastWeatherData,
 } from '../services/weather.service';
-import { isValidCountryCode } from '../helpers/isValidCountryCode.hekper';
+import { isValidCountryCode } from '../helpers/isValidCountryCode.helper';
 import { formattedTimezoneHelper } from '../helpers/formattedTimezone.helper';
 import { isValidLanguage } from '../helpers/isValidLanguage.helper';
 import { connect } from '../config/redis.config';

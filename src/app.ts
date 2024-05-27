@@ -22,4 +22,5 @@ app.use('/v1', weatherRoutes);
 
 app.use('/v1/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+
 export default app;
